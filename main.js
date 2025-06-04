@@ -2,7 +2,6 @@ const Jardin = require('./clases.js');
 const nuevoJardin = new Jardin();
 const readline = require('node:readline');
 const { stdin: input, stdout: output } = require('node:process');
-const Planta = require('./clases');
 
 const rl = readline.createInterface({
     input: process.stdin,
