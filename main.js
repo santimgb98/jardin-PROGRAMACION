@@ -1,7 +1,8 @@
-const planta = require('./clases');
+const Jardin = require('./clases.js');
 const nuevoJardin = new Jardin();
 const readline = require('node:readline');
 const { stdin: input, stdout: output } = require('node:process');
+const Planta = require('./clases');
 
 const rl = readline.createInterface({
     input: process.stdin,
@@ -25,14 +26,12 @@ async function main(){
     while(true){
 
         console.log("---------------------------------")
-        console.log('MENÚ GESTOR DE VIDEOJUEGOS');
-        console.log('1. Agregar un nuevo videojuego')
-        console.log('2. Listar todos')
-        console.log('3. Filtrar por género')
-        console.log('4. Ordenar por rating')
-        console.log('5. Buscar por título')
-        console.log('6. Mostrar solo retro')
-        console.log('7. Salir y guardar cambios')
+        console.log('MENÚ GESTOR DEL JARDÍN');
+        console.log('1. Añadir nueva planta')
+        console.log('2. Listar plantas')
+        console.log('3. Calcular útlimo tiempo de riego')
+        console.log('4. Necesario regar')
+        console.log('7. Salir y guardar')
         console.log('---------------------------------');
 
         let opcion = await eleccion();

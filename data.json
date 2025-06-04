@@ -16,5 +16,11 @@
     "tipo": "ARBUSTO",
     "frecuencia_riego": 12,
     "ultima_fecha_riego": "2025-06-02"
+  },
+  {
+    "nombre": "PEPE",
+    "tipo": "ÁRBOL",
+    "frecuencia_riego": 6,
+    "ultima_fecha_riego": "2025-06-04"
   }
 ]
