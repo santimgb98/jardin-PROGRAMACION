@@ -1,0 +1,20 @@
+[
+  {
+    "nombre": "GREGORIO",
+    "tipo": "ÁRBOL",
+    "frecuencia_riego": 5,
+    "ultima_fecha_riego": "2025-03-02"
+  },
+  {
+    "nombre": "CARMENCITA",
+    "tipo": "ARBUSTO",
+    "frecuencia_riego": 12,
+    "ultima_fecha_riego": "2025-06-02"
+  },
+  {
+    "nombre": "OVO",
+    "tipo": "ARBUSTO",
+    "frecuencia_riego": 12,
+    "ultima_fecha_riego": "2025-06-02"
+  }
+]
