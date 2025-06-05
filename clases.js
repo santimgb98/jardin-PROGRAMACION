@@ -7,34 +7,46 @@ let hoy = fecha_hora.local();
 const plantasBDjson = JSON.parse(fs.readFileSync("./data.json", "utf8"));
 
 
+// Función asíncrona para regar la planta que lo necesite
+/**/    async function regarPlanta(nombre_planta) {
+/**/        return new Promise(() => {
+/**/            for(const planta of plantasBDjson){
+/**/                if (planta.nombre == nombre_planta){
+/**/                    planta.ultima_fecha_riego = hoy.toISODate();
+/**/                    let resultado =(`${planta.nombre} ha sido regado exitosamente!`);
+/**/                    return resultado;
+/**/                }
+/**/            }
+/**/        });
+/**/    }
 
-async function regarPlanta(nombre_planta) {
-    return new Promise(() => {
-        for(const planta of plantasBDjson){
-            if (planta.nombre == nombre_planta){
-                planta.ultima_fecha_riego = hoy.toISODate();
-                let resultado =(`${planta.nombre} ha sido regado exitosamente!`);
-                return resultado;
-            }
-        }
-    });
-}
- 
-async function guardarRegistro(){}
-function revisarSiNecesitaRiego(planta_){
+// Función asíncrona para guardar cada registro
+/**/    async function guardarRegistro(){}
+/**/
+/**/
+/**/
 
-            // fecha_hoy = fecha escrita (fecha de hoy)
-            const fecha_hoy = fecha_hora.fromISO(hoy.toISODate());
-            const ultima_fecha_riego = fecha_hora.fromISO(planta_.ultima_fecha_riego);
+// Función asíncrona para revisar si hace falta regar la
+// planta especificada mediante parámetro
+/**/    async function revisarSiNecesitaRiego(planta_){
+/**/
+/**/       // fecha_hoy = fecha escrita (fecha de hoy)
+/**/       const fecha_hoy = fecha_hora.fromISO(hoy.toISODate());
+/**/       const ultima_fecha_riego = fecha_hora.fromISO(planta_.ultima_fecha_riego);
+/**/
+/**/       // diferencia = diferencia entre fechas en formato "días"
+/**/       const diferencia = fecha_hoy.diff(ultima_fecha_riego, 'days');
+/**/
+/**/       if(diferencia > planta_.frecuencia_riego)return true;
+/**/       if(diferencia <= planta_.frecuencia_riego)return false;
+/**/                
+/**/    }
 
-            // diferencia = diferencia entre fechas en formato "días"
-            const diferencia = fecha_hoy.diff(ultima_fecha_riego, 'days');
-
-            if(diferencia > planta_.frecuencia_riego)return true;
-            if(diferencia <= planta_.frecuencia_riego)return false;
-        
-}
-async function crearLog_de_RiegoPorFecha(){}
+// Función asíncrona para crear log de riego por fecha
+/**/    async function crearLog_de_RiegoPorFecha(){}
+/**/
+/**/
+/**/
 
 
 class Jardin{
@@ -45,7 +57,7 @@ class Jardin{
         this.ultima_fecha_riego = ultima_fecha_riego;
     }
     // Método añadir planta
-    addPlanta(){
+    async addPlanta(){
         console.clear();
         this.nombre = prompt('Nombre de la nueva planta: ').toUpperCase();
         console.log('TIPOS (Selecciona su orden):');
@@ -82,14 +94,14 @@ class Jardin{
         console.clear();
         console.log(`${this.nombre} añadido exitosamente!`);
     }
-    listarPlantas(){
+    async listarPlantas(){
         console.clear();
         // Recorre el JSON seleccionando nombre y tipo de cada planta y devuelve un mensaje
         for(const planta of plantasBDjson){
             console.log(`La planta ${planta.nombre} es de tipo ${planta.tipo}`);
         }
     }
-    calcularTiempoUltimoRiego(){
+    async calcularTiempoUltimoRiego(){
         console.clear();
         for(const planta of plantasBDjson){
             console.log(planta.nombre);
@@ -110,21 +122,24 @@ class Jardin{
                 // si la diferencia > 0  \ si la diferencia <= 0
                 if(diferencia ==0)console.log(`${opcion} se ha regado hoy`)
                 if(diferencia !=0)console.log(`Han pasado ${diferencia.days} días desde el último riego de ${opcion}`)
-                
             }
         }
-
     }
     async necesarioRiegoSiNo(){
         console.clear();
         for(const planta of plantasBDjson){
             let riego = revisarSiNecesitaRiego(planta);
-            if(riego == true)console.log(`${planta.nombre} necesita ser regada`);
-            if(riego == false)console.log(`${planta.nombre} NO necesita riego`);
+            if(riego == true)console.log(`${planta.nombre} necesita ser regada ${planta.frecuencia_riego}`);
+            if(riego == false)console.log(`${planta.nombre} NO necesita riego ${planta.frecuencia_riego}`);
         }
     }
-
-
+    async salir(){
+        console.clear();
+        console.log('Saliendo...');
+        setTimeout(()=>{
+            process.exit();
+        })
+    }
 }
 class Planta extends Jardin{
     super(nombre, tipo, frecuencia_riego, ultima_fecha_riego){

@@ -28,11 +28,6 @@
     "tipo": "FLOR",
     "frecuencia_riego": 12,
     "ultima_fecha_riego": "2025-06-04"
-  },
-  {
-    "nombre": "WEYSITO",
-    "tipo": "FLOR",
-    "frecuencia_riego": 3,
-    "ultima_fecha_riego": "2025-06-04"
   }
+
 ]
