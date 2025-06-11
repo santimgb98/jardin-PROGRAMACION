@@ -1,33 +1,26 @@
 [
   {
-    "nombre": "GREGORIO",
-    "tipo": "ÁRBOL",
-    "frecuencia_riego": 5,
-    "ultima_fecha_riego": "2025-03-02"
-  },
-  {
-    "nombre": "CARMENCITA",
-    "tipo": "ARBUSTO",
-    "frecuencia_riego": 12,
-    "ultima_fecha_riego": "2025-06-02"
-  },
-  {
-    "nombre": "OVO",
-    "tipo": "ARBUSTO",
-    "frecuencia_riego": 12,
-    "ultima_fecha_riego": "2025-06-02"
-  },
-  {
-    "nombre": "PEPE",
-    "tipo": "ÁRBOL",
-    "frecuencia_riego": 6,
-    "ultima_fecha_riego": "2025-06-04"
-  },
-  {
-    "nombre": "LALA",
+    "nombre": "ROSA",
     "tipo": "FLOR",
-    "frecuencia_riego": 12,
-    "ultima_fecha_riego": "2025-06-04"
+    "frecuencia_riego": 2,
+    "ultima_fecha_riego": "2025-06-11"
+  },
+  {
+    "nombre": "ROBLE",
+    "tipo": "ÁRBOL",
+    "frecuencia_riego": 25,
+    "ultima_fecha_riego": "2025-06-11"
+  },
+  {
+    "nombre": "ARBUSTO COMÚN",
+    "tipo": "ARBUSTO",
+    "frecuencia_riego": 4,
+    "ultima_fecha_riego": "2025-06-11"
+  },
+  {
+    "nombre": "ASDA",
+    "tipo": "FLOR",
+    "frecuencia_riego": 3,
+    "ultima_fecha_riego": "2025-06-11"
   }
-
 ]
