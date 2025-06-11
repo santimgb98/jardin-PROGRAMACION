@@ -102,7 +102,12 @@ class Jardin{
     }
     async listarPlantas(){
         console.clear();
+
+        // Si no hay plantas en JSON, devuelve este mensaje
+        if(plantasBDjson.length < 1) console.log('Sin existencias, añade una planta tú mismo!')
+
         for(const planta of plantasBDjson){
+            
             // Si es flor utilizar el atrículo "una", sino utilizar "un"
             if(planta.tipo == "FLOR"){
                 console.log(`La planta ${planta.nombre} es una ${planta.tipo}`);
