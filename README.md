@@ -1,58 +1,43 @@
-Gestor de Jardín en JavaScript
+# Gestor de Jardín en JavaScript
 
 Un programa para gestionar plantas en un jardín utilizando clases y funciones asincrónicas en JavaScript.
-Estructura del Proyecto
+
+## Estructura del Proyecto
 
 El proyecto consta de dos clases principales y un menú interactivo:
-Clases
 
-    Planta: Representa una planta individual con sus características.
+### Clases
 
-    Jardin: Gestiona una colección de plantas y proporciona funcionalidades relacionadas.
+Planta: Representa una planta individual con sus características.
 
-Funcionalidades
+Jardin: Gestiona una colección de plantas y proporciona funcionalidades relacionadas.
 
-    Añadir nuevas plantas al jardín
+### Funcionalidades
 
-    Listar todas las plantas registradas
+Añadir nuevas plantas al jardín
 
-    Calcular tiempo desde el último riego
+Listar todas las plantas registradas
 
-    Comprobar si una planta necesita riego
+Calcular tiempo desde el último riego
 
-    Exportar datos a formato XLS
+Comprobar si una planta necesita riego
 
-    Menú interactivo en la consola
+Exportar datos a formato XLS
 
+Menú interactivo en la consola
 
-Requisitos
+### Requisitos
 
-    Node.js instalado
+Node.js
 
-    Dependencias (si las hay): xlsx para la exportación a Excel
+Librería xlsx
 
-Instalación
+Librería fileSystem
 
-    Clona el repositorio o descarga los archivos
+Librería luxon
 
-    Ejecuta npm install para instalar dependencias (si las hay)
+Librería
 
-    Ejecuta el programa con node nombre_del_archivo.js
+### Instalación
 
-Uso
-
-    Ejecuta el programa
-
-    Selecciona una opción del menú
-
-    Sigue las instrucciones para cada funcionalidad
-
-Características
-
-    Programación orientada a objetos
-
-    Funciones asincrónicas para operaciones que requieren espera
-
-    Interfaz de consola amigable
-
-    Posibilidad de exportar datos
+Clona el repositorio o descarga los archivos
